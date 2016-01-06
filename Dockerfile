@@ -44,8 +44,7 @@ RUN chmod u+x /install.sh \
  && /opt/editconf.py /etc/postfix/main.cf \
     smtp_tls_CAfile=/etc/ssl/certs/ca-certificates.crt \
     smtp_tls_loglevel=2 \
- && /opt/editconf.py /etc/postfix/main.cf virtual_transport=lmtp:[127.0.0.1]:10025 \
- && /opt/editconf.py /etc/postfix/main.cf virtual_transport=lmtp:unix:dovecot/lmtp \
+ && /opt/editconf.py /etc/postfix/main.cf virtual_transport=lmtp:[spamassassin]:10025 \
  && /opt/editconf.py /etc/postfix/main.cf \
     smtpd_sender_restrictions="reject_non_fqdn_sender,reject_unknown_sender_domain,reject_rhsbl_sender dbl.spamhaus.org" \
     smtpd_recipient_restrictions=permit_sasl_authenticated,permit_mynetworks,"reject_rbl_client zen.spamhaus.org",reject_unlisted_recipient \
