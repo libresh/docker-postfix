@@ -54,7 +54,7 @@ RUN chmod u+x /install.sh \
     message_size_limit=134217728 \
  && /opt/editconf.py /etc/postfix/main.cf \
     smtpd_sasl_type=dovecot \
-    smtpd_sasl_path=dovecot/auth \
+    smtpd_sasl_path=inet:dovecot:10027 \
     smtpd_sasl_auth_enable=yes \
  && /opt/editconf.py /etc/postfix/main.cf \
     virtual_mailbox_domains=mysql:/etc/postfix/virtual-mailbox-domains.cf \

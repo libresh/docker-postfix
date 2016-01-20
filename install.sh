@@ -12,6 +12,3 @@ if [ ! -f /etc/opendkim/TrustedHosts ]; then
   mkdir -p /etc/opendkim
   echo "127.0.0.1" > /etc/opendkim/TrustedHosts
 fi
-
-chown -R postfix:postfix /var/spool/postfix/dovecot
-
