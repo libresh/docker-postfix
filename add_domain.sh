@@ -15,6 +15,5 @@ echo mail._domainkey.$DOMAIN $DOMAIN:mail:/etc/opendkim/keys/$DOMAIN/mail >> /et
 echo *@$DOMAIN mail._domainkey.$DOMAIN >> /etc/opendkim/SigningTable
 
 echo $DOMAIN >> /etc/opendkim/TrustedHosts
-echo galaxy.$DOMAIN >> /etc/opendkim/TrustedHosts
 
 cat /etc/opendkim/keys/$DOMAIN/mail.txt
