@@ -42,6 +42,7 @@ RUN chmod u+x /install.sh \
  && /opt/editconf.py /etc/postfix/main.cf \
     smtpd_relay_restrictions=permit_sasl_authenticated,permit_mynetworks,reject_unauth_destination \
  && /opt/editconf.py /etc/postfix/main.cf \
+    smtp_tls_security_level=may \
     smtp_tls_CAfile=/etc/ssl/certs/ca-certificates.crt \
     smtp_tls_loglevel=2 \
  && /opt/editconf.py /etc/postfix/main.cf \
