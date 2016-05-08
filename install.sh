@@ -1,4 +1,4 @@
-#!/bin/bash -eux
+#!/bin/bash -eu
 
 sed -i "s/##DB_PASS##/${DB_ENV_MYSQL_PASSWORD}/" /etc/postfix/virtual-mailbox-domains.cf
 sed -i "s/##DB_PASS##/${DB_ENV_MYSQL_PASSWORD}/" /etc/postfix/virtual-mailbox-maps.cf
