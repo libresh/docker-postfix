@@ -49,7 +49,7 @@ RUN chmod u+x /install.sh \
     virtual_transport=lmtp:[spamassassin]:10025 \
     lmtp_host_lookup=native \
  && /opt/editconf.py /etc/postfix/main.cf \
- 	  smtpd_sender_restrictions="reject_non_fqdn_sender,reject_unknown_sender_domain,reject_rhsbl_sender dbl.spamhaus.org" \
+    smtpd_sender_restrictions="reject_non_fqdn_sender,reject_unknown_sender_domain,reject_rhsbl_sender dbl.spamhaus.org" \
     smtpd_recipient_restrictions=permit_sasl_authenticated,permit_mynetworks,"reject_rbl_client zen.spamhaus.org",reject_unlisted_recipient \
  && /opt/editconf.py /etc/postfix/main.cf \
     message_size_limit=134217728 \
