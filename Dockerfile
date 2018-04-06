@@ -63,7 +63,7 @@ RUN chmod u+x /install.sh \
     virtual_alias_maps=mysql:/etc/postfix/virtual-alias-maps.cf \ 
     local_recipient_maps=\$virtual_mailbox_maps \
  && /opt/editconf.py /etc/postfix/main.cf \
-    mynetworks="127.0.0.0/8 172.17.0.0/16" \
+    mynetworks="127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16" \
  && /opt/editconf.py /etc/opendmarc.conf -s \
     "Syslog=true" \
     "Socket=inet:8893@[127.0.0.1]" \
